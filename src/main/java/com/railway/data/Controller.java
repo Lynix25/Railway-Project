@@ -7,24 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/app")
 public class Controller {
-    @Autowired
-    UserRepository userRepository;
-
     @GetMapping
     public ResponseEntity getAllUser(){
-
-        return new ResponseEntity<>(userRepository.findAll(),HttpStatus.OK);
+        return new ResponseEntity<>("Application is running",HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity createUser(@RequestBody UserCreateRequest requestBody){
-        UserModel user = new UserModel();
-        user.setId(requestBody.getId());
-        user.setAge(requestBody.getAge());
-        user.setName(requestBody.getName());
-
-        return new ResponseEntity<>(userRepository.save(user),HttpStatus.OK);
-    }
 }
