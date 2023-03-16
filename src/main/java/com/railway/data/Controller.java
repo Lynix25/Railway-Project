@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/app")
 public class Controller {
-    @GetMapping
-    public ResponseEntity getAllUser(){
-        return new ResponseEntity<>("Application is running",HttpStatus.OK);
+    @GetMapping("version")
+    public ResponseEntity getVersion(){
+        String version = "v1.0.0";
+        System.out.println("Debug : " +  version);
+        return new ResponseEntity<>("Application is running " + version,HttpStatus.OK);
     }
 
 }
