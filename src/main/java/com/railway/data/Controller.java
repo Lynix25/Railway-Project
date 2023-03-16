@@ -17,7 +17,7 @@ public class Controller {
 
     @GetMapping("users")
     public ResponseEntity getAllUser(){
-
+        System.out.println("Call Get All User");
         return new ResponseEntity<>(userRepository.findAll(),HttpStatus.OK);
     }
 
