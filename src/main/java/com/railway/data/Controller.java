@@ -18,6 +18,16 @@ public class Controller {
         return new ResponseEntity<>(userRepository.findAll(),HttpStatus.OK);
     }
 
+    @PostMapping("init")
+    public ResponseEntity initilizeData(){
+        UserModel user = new UserModel("1","Paul",21);
+        System.out.println("Save User to DB");
+        userRepository.save(user);
+        System.out.println("Finish to save User in DB");
+        System.out.println(user);
+        return new ResponseEntity("Success Initilize Data", HttpStatus.OK);
+    }
+
     @PostMapping
     public ResponseEntity createUser(@RequestBody UserCreateRequest requestBody){
         UserModel user = new UserModel();
