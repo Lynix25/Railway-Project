@@ -13,11 +13,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>railway</name>
 	<description>Test project for Railway</description>
-
 	<properties>
-		<java.version>18</java.version>
+		<java.version>11</java.version>
 	</properties>
-	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
